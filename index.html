@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="./style.css">
         <script defer src="./index.js"></script>
+        <script defer src="./gameboard.js"></script>
     </head>
     <body>
         <header>
@@ -10,44 +11,43 @@
                 FIND ME GAME
             </div>
         </header>
-        <header>
-            <select id="diff-dropdown"></select>
-            <button id="new-game-button"></button>
+        <header id="navigation-bar">
+            <script type="text/javascript">
+                function jsFunction(value)
+                {
+                    console.log(value);
+                }
+                </script>
+            <label for="diff-dropdown">Select Your Difficulty: </label>
+            <select id="diff-dropdown" name="diff-dropdown" onmousedown="this.value='';" onchange="jsFunction(this.value);">
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Difficult</option>
+            </select>
+            <form id="search-bar-form">
+                <label for="character-id-input">Search By ID: </label>
+                <input id="character-id-input" type="text" placeholder="Enter Character ID Here">
+                <input type="submit" value="Search">
+            </form>
+            <button id="new-game-button">New Game</button>
         </header>
-        <form id="search-bar-form">
-            <label for="character-id-input">Search By ID:</label>
-            <input id="character-id-input" type="text" placeholder="Enter Character ID Here">
-            <input type="submit" value="search">
-        </form>
         <span id="character-image">
         </span>
         <br>
         <div id="score-tracker-bar">
-            <div id="high-score-tracker">High Score:</div>
+            <div id="time-counter">
+                <label for="counter-element">Time Remaining: </label>
+                <h1 id="counter-element">00</h1>
+            </div>
             <div id="current-score-tracker">Current Score:</div>
+            <div id="high-score-tracker">High Score:</div>
         </div>
-        <div id="game-board-area">FIND ME!
-            <table id="picture-table">
-                <tr id="first-row">
-                    <td>Item 1</td>
-                    <td>Item 2</td>
-                    <td>Item 3</td>
-                </tr>
-                <tr id="second-row">
-                    <td>Item 4</td>
-                    <td>Item 5</td>
-                    <td>Item 6</td>
-                </tr>
-                <tr id="third-row">
-                    <td>Item 7</td>
-                    <td>Item 8</td>
-                    <td>Item 9</td>
-                </tr>
-            </table>
+        <div id="game-board-area">
+            <button id="start-game-button">Start</button>
         </div>
     </body>
     <footer>
-        <div id="footer">Contact Info/Made by Info?</div>
+        <!-- <div id="footer">Contact Info/Made by Info?</div> -->
     </footer>
 
 </html>

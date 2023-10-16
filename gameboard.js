@@ -1,5 +1,6 @@
 let picturesArray = []
 
+let targetPicture;
 let body = document.querySelector('body')
 
 const newGameButton = document.createElement('button')
@@ -21,6 +22,7 @@ let targetRow
 let targetColumn
 
 let pictureTable = document.createElement('table')
+pictureTable.id = 'gameboard';
 
 
 
@@ -44,7 +46,7 @@ function fillGrid() {
     
             const newPicture = document.createElement('img')
             newPicture.className = 'grid-img'
-            newPicture.style.width = '50px'
+            newPicture.style.width = '75px'
             newPicture.src = picturesArray[randomNumber].url
             newRow.appendChild(cell)
             cell.append(newPicture)
@@ -54,11 +56,10 @@ function fillGrid() {
         
     }
     
-    let targetPicture = document.getElementById(`r${targetRow}c${targetColumn}`)
+    targetPicture = document.getElementById(`r${targetRow}c${targetColumn}`)
     console.log(targetPicture)
 
     targetPicture.addEventListener('click', handleFound)
-
 }
 
 function handleFound() {
