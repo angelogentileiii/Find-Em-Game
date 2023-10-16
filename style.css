@@ -1,0 +1,39 @@
+body {
+text-align:  center;
+}
+
+#header-bar {
+    background-color: rgba(350, 000, 000, 25);
+    text-align: center;
+    font-size: 50px;
+    padding: 50px;
+}
+
+#character-id-input {
+    padding: 5px;
+    display: inline-block;
+}
+
+#diff-dropdown {
+    display: inline-block;
+}
+
+#new-game-button {
+    display: inline-block;
+}
+
+#desired-character-image {
+    display: block;
+    margin: auto;
+    width: 100px;
+}
+
+#high-score-tracker {
+    display: inline-block;
+    padding-right: 200px;
+}
+
+#current-score-tracker {
+    display: inline-block;
+    padding-left: 200px;
+}

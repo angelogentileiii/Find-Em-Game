@@ -6,15 +6,44 @@
     </head>
     <body>
         <header>
+            <div id="header-bar">
+                FIND ME GAME
+            </div>
+        </header>
+        <header>
             <select id="diff-dropdown"></select>
             <button id="new-game-button"></button>
         </header>
-        <form id="search-bar">Search Bar</form>
-        <div id="high-score-tracker">High Score:</div>
-        <div id="current-score-tracker">Current Score:</div>
-        <div id="game-board-area">Game Board
-            <th></th>
-
+        <form id="search-bar-form">
+            <label for="character-id-input">Search By ID:</label>
+            <input id="character-id-input" type="text" placeholder="Enter Character ID Here">
+            <input type="submit" value="search">
+        </form>
+        <span id="character-image">
+        </span>
+        <br>
+        <div id="score-tracker-bar">
+            <div id="high-score-tracker">High Score:</div>
+            <div id="current-score-tracker">Current Score:</div>
+        </div>
+        <div id="game-board-area">FIND ME!
+            <table id="picture-table">
+                <tr id="first-row">
+                    <td>Item 1</td>
+                    <td>Item 2</td>
+                    <td>Item 3</td>
+                </tr>
+                <tr id="second-row">
+                    <td>Item 4</td>
+                    <td>Item 5</td>
+                    <td>Item 6</td>
+                </tr>
+                <tr id="third-row">
+                    <td>Item 7</td>
+                    <td>Item 8</td>
+                    <td>Item 9</td>
+                </tr>
+            </table>
         </div>
     </body>
     <footer>
