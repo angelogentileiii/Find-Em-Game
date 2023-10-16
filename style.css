@@ -1,3 +1,4 @@
+/* header bar area */
 #header-bar {
     background-color: rgba(350, 000, 000, 25);
     text-align: center;
@@ -5,35 +6,28 @@
     padding: 50px;
 }
 
-#character-id-input {
-    padding: 5px;
-    display: inline-block;
-}
-
 /* navigation bar (search/drop down/new game) */
 
 #navigation-bar {
-    display: block;
+    display: contents, inline;
     margin: auto;
-    position: relative;
+}
+
+#character-id-input {
+    display: inline;
 }
 
 #diff-dropdown {
-    display: inline-block;
+    display: inline;
 }
 
-#search-bar-form {
-    display: inline-block;
-}
-
-#new-game-button {
-    display: inline-block;
-}
+/* selected character image */
 
 #desired-character-image {
     display: block;
     margin: auto;
     width: 100px;
+    border: 5px solid #000000;
 }
 
 /* counter/score tracker */
@@ -46,13 +40,10 @@
 
 #high-score-tracker {
     display: inline-block;
-    padding-right: 200px;
-    padding-left: 200px;
 }
 
 #current-score-tracker {
     display: inline-block;
-    padding-left: 200px;
 }
 
 #counter-element {

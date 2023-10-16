@@ -17,19 +17,25 @@
                 {
                     console.log(value);
                 }
-                </script>
-            <label for="diff-dropdown">Select Your Difficulty: </label>
-            <select id="diff-dropdown" name="diff-dropdown" onmousedown="this.value='';" onchange="jsFunction(this.value);">
-                <option>Easy</option>
-                <option>Medium</option>
-                <option>Difficult</option>
-            </select>
-            <form id="search-bar-form">
-                <label for="character-id-input">Search By ID: </label>
-                <input id="character-id-input" type="text" placeholder="Enter Character ID Here">
-                <input type="submit" value="Search">
-            </form>
-            <button id="new-game-button">New Game</button>
+            </script>
+            <div>
+                <label for="diff-dropdown">Select Your Difficulty: </label>
+                <select id="diff-dropdown" name="diff-dropdown" onmousedown="this.value='';" onchange="jsFunction(this.value);">
+                    <option>Easy</option>
+                    <option>Medium</option>
+                    <option>Difficult</option>
+                </select>
+            </div>
+            <div>
+                <form id="search-bar-form">
+                    <label for="character-id-input">Search By ID: </label>
+                    <input id="character-id-input" type="text" placeholder="Enter Character ID">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <div>
+                <button id="new-game-button">New Game</button>
+            </div>
         </header>
         <span id="character-image">
         </span>
@@ -37,14 +43,18 @@
         <div id="score-tracker-bar">
             <div id="time-counter">
                 <label for="counter-element">Time Remaining: </label>
-                <h1 id="counter-element">00</h1>
+                <p id="counter-element">00</p>
             </div>
-            <div id="current-score-tracker">Current Score:</div>
-            <div id="high-score-tracker">High Score:</div>
+            <div id="current-score-tracker">
+                <label for="current-score-tracker">Current Score: </label>
+                <p id="current-score-tracker">00</p>
+            </div>
+            <label for="high-score-tracker">High Score: </label>
+            <p id="high-score-tracker">00</p>
         </div>
-        <div id="game-board-area">
+        <!-- <div id="game-board-area">
             <button id="start-game-button">Start</button>
-        </div>
+        </div> -->
     </body>
     <footer>
         <!-- <div id="footer">Contact Info/Made by Info?</div> -->

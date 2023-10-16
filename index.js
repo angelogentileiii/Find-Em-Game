@@ -2,15 +2,14 @@ const gameBoardArea = document.getElementById('game-board-area');
 const characterSearchInput = document.getElementById('character-id-input');
 const characterSearchForm = document.getElementById('search-bar-form');
 const characterImageSpanElement = document.getElementById('character-image');
+const counterClock = document.getElementById('counter-element');
+const startGameButtonElement = document.getElementById('start-game-button');
 
 let desiredCharacter;
 let allAvailableCharacters;
 let newCharacterImageElement;
 
-//counter variable
-let currentNumber = 30;
-let counterStart;
-
+//local json fetch
 fetch('http://localhost:3000/results')
   .then(response => response.json())
   .then(results => {
@@ -19,6 +18,7 @@ fetch('http://localhost:3000/results')
     console.log(allAvailableCharacters)
 });
 
+//character search bar
 characterSearchForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -29,7 +29,8 @@ characterSearchForm.addEventListener('submit', (event) => {
 
         } else if (Number(character.id) === Number(characterSearchInput.value)) {
             const newLineBreak = document.createElement('br');
-            const newCharacterImageElement = document.createElement('img');
+            const newCharacterImageElement = document.createElement('img')
+            newCharacterImageElement.style
             newCharacterImageElement.id = 'desired-character-image'
             newCharacterImageElement.src = character.url;
             characterImageSpanElement.appendChild(newLineBreak);
@@ -42,10 +43,14 @@ characterSearchForm.addEventListener('submit', (event) => {
     characterSearchForm.reset();
 })
 
-const counterClock = document.getElementById('counter-element');
-const startGameButtonElement = document.getElementById('start-game-button');
 
+//------------
 
+//counter variable
+let currentNumber = 30;
+let counterStart;
+
+//game time clock from 30
 startGameButtonElement.addEventListener('click', startCounterClock)
 
 function startCounterClock(){
