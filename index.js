@@ -35,10 +35,10 @@ characterSearchForm.addEventListener('submit', (event) => {
             newCharacterImageElement.src = character.url;
             characterImageSpanElement.appendChild(newLineBreak);
             characterImageSpanElement.appendChild(newCharacterImageElement);
-            
-        } else {
-            console.log('Oh crap')
-        }
+        } 
+        // } else {
+        //     console.log('Oh crap')
+        // }
     })
     characterSearchForm.reset();
 })
@@ -59,6 +59,7 @@ function startCounterClock(){
         
         if (currentNumber < 0) {
             clearInterval(gameTimer);
+            pictureTable.innerHTML = ""
         }
     }, 1000)
  };
