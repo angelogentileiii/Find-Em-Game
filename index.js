@@ -3,10 +3,11 @@ const characterSearchInput = document.getElementById('character-id-input');
 const characterSearchForm = document.getElementById('search-bar-form');
 const characterImageSpanElement = document.getElementById('character-image');
 const counterClock = document.getElementById('counter-element');
-const startGameButtonElement = document.getElementById('start-game-button');
+// const startGameButtonElement = document.getElementById('start-game-button');
 
 const playAgainButtonElement = document.createElement('button');
 
+let startGameButtonElement;
 let desiredCharacter;
 let allAvailableCharacters;
 let newCharacterImageElement;
@@ -23,7 +24,23 @@ fetch('http://localhost:3000/results')
 });
 
 function defaultPageLoad() {
+};
 
+//create startButton
+function createStartButton(){
+    startGameButtonElement = document.createElement('button');
+    startGameButtonElement.id = 'start-game-button';
+    startGameButtonElement.textContent = 'Find Me!'
+    startButtonArea.appendChild(startGameButtonElement)
+
+    startGameButtonElement.addEventListener('click', () => {
+        counterElementLabel.textContent = `Time Remaining: `
+        currentScoreElement.textContent = `Current Score: ${scoreCounter}`
+    
+        fillGrid();
+        startCounterClock();
+        startGameButtonElement.remove();
+    })
 }
 
 
@@ -45,8 +62,11 @@ characterSearchForm.addEventListener('submit', (event) => {
             characterImageSpanElement.appendChild(newLineBreak);
             characterImageSpanElement.appendChild(newCharacterImageElement);
         } 
-        
     })
+
+    if (!document.getElementById('play-again')) {
+        createStartButton()
+    }
 
     characterSearchForm.reset();
 })
@@ -79,7 +99,8 @@ function startCounterClock(){
 
  //play again button - populates after game ends
  function createPlayAgainButton(){
-    playAgainButtonElement.textContent = 'Play Again?'
+    playAgainButtonElement.textContent = 'Play Again?';
+    playAgainButtonElement.id = 'play-again';
     counterClock.appendChild(playAgainButtonElement)
 }
 
@@ -108,12 +129,12 @@ function gameScoreFunction(){
 
 
 //find me/start game button
-startGameButtonElement.addEventListener('click', () => {
-    counterElementLabel.textContent = `Time Remaining: `
-    currentScoreElement.textContent = `Current Score: ${scoreCounter}`
+// startGameButtonElement.addEventListener('click', () => {
+//     counterElementLabel.textContent = `Time Remaining: `
+//     currentScoreElement.textContent = `Current Score: ${scoreCounter}`
 
-    fillGrid();
-    startCounterClock();
-    startGameButtonElement.remove();
+//     fillGrid();
+//     startCounterClock();
+//     startGameButtonElement.remove();
 
-})
+// })
