@@ -3,7 +3,7 @@ const characterSearchInput = document.getElementById('character-id-input');
 const characterSearchForm = document.getElementById('search-bar-form');
 const characterImageSpanElement = document.getElementById('character-image');
 const counterClock = document.getElementById('counter-element');
-// const startGameButtonElement = document.getElementById('start-game-button');
+const defaultLoadArea = document.getElementById('default-load-area');
 
 const playAgainButtonElement = document.createElement('button');
 
@@ -13,6 +13,8 @@ let allAvailableCharacters;
 let newCharacterImageElement;
 let highScoreCounter = 0;
 let betterLuckNextTimeMessage;
+let randomImage;
+let defaultImageOnLoad;
 
 //local json fetch
 fetch('http://localhost:3000/results')
@@ -20,10 +22,19 @@ fetch('http://localhost:3000/results')
   .then(results => {
     allAvailableCharacters = results
 
-    //console.log(allAvailableCharacters)
+    defaultPageLoad();
 });
 
+//default page image load
 function defaultPageLoad() {
+    defaultImageOnLoad = document.createElement('img');
+
+    randomImage = Math.floor(20 * Math.random())
+
+    defaultImageOnLoad.src = 'https://media.giphy.com/media/VGjM9wsHH0JMyneWB6/giphy.gif';
+    defaultImageOnLoad.id = 'page-load-image';
+    defaultLoadArea.appendChild(defaultImageOnLoad);
+
 };
 
 //create startButton
@@ -64,6 +75,8 @@ characterSearchForm.addEventListener('submit', (event) => {
         } 
     })
 
+    defaultImageOnLoad.remove();
+
     if (!document.getElementById('play-again')) {
         createStartButton()
     }
@@ -93,7 +106,7 @@ function startCounterClock(){
             gameScoreFunction();
 
         }
-    }, 1)
+    }, 5)
  };
 
 

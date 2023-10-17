@@ -1,11 +1,24 @@
 body {
+    color: rgb(254, 228, 249);
+    border: 5px dotted rgb(250, 134, 227);
     background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,181,248,1) 68%);
     font-style: italic;
 }
 
+/* page load image */
+#page-load-image {
+    display: block;
+    margin: auto;
+    width: 500px;
+}
+
 
 /* header bar area */
+#navigation-bar div label {
+    -webkit-text-stroke-width: .75px; 
+    -webkit-text-stroke-color: rgb(250, 134, 227); 
+}
 
 #header-bar {
     text-align: center;
@@ -14,6 +27,8 @@ body {
     font-style: normal;
     font-size: 120px;
     padding: 25px;
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: rgb(250, 134, 227); 
 }
 
 /* navigation bar (search/drop down/new game) */
@@ -31,6 +46,7 @@ header#navigation-bar div{
 #search-bar-form{
     display: inline-block;
     padding-left: 25px;
+    
 }
 
 #character-id-input {
@@ -80,19 +96,29 @@ select {
     display: block;
     margin: auto;
     text-align: center;
+    font-size: 18px;
+    padding-bottom: 10px;
 }
 
 #high-score-tracker {
     display: inline-block;
+    color: rgb(250, 134, 227);
 }
 
 #current-score-tracker {
     display: inline-block;
+    color: rgb(250, 134, 227);
+}
+
+#counter-element-label {
+    color: rgb(250, 134, 227);
 }
 
 #counter-element {
     display:inline-block;
     margin: auto;
+    color: rgb(250, 134, 227);
+    background-color: rgb(255, 255, 255);;
 }
 
 /* time counter area */
@@ -100,8 +126,19 @@ select {
     display: block;
     margin: auto;
     text-align: center;
+    margin-bottom: 25px;
 }
 
+#start-game-button {
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#gameboard {
+
+}
 
 /* game board area */
 
