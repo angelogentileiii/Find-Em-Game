@@ -11,10 +11,13 @@ let startGameButtonElement;
 let desiredCharacter;
 let allAvailableCharacters;
 let newCharacterImageElement;
-let highScoreCounter = 0;
+let highScoreCounter = [0,0,0];
+let highScoreIndex = 0
 let betterLuckNextTimeMessage;
 let randomImage;
 let defaultImageOnLoad;
+
+const difficultButton = document.getElementById('diff-dropdown')
 
 //local json fetch
 fetch('http://localhost:3000/results')
@@ -125,12 +128,18 @@ playAgainButtonElement.addEventListener('click', () => {
     betterLuckNextTimeMessage.remove();
 })
 
-
 //updates high schore after game ends
 function gameScoreFunction(){
-    if (Number(scoreCounter >= Number(highScoreCounter))) {
-        highScoreCounter = scoreCounter
-        highScoreElement.textContent = `High Score: ${highScoreCounter}`
+    if (difficultButton.value === 'Easy') {
+        highScoreIndex = 0
+    } else if (difficultButton.value === 'Medium') {
+        highScoreIndex = 1
+    } else {
+        highScoreIndex = 2
+    }
+    if (Number(scoreCounter >= Number(highScoreCounter[highScoreIndex]))) {
+        highScoreCounter[highScoreIndex] = scoreCounter
+        highScoreElement.textContent = `High Score: ${highScoreCounter[highScoreIndex]}`
     } else {
         betterLuckNextTimeMessage = document.createElement('h3');
         betterLuckNextTimeMessage.id = "better-luck-message";

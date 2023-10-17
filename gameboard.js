@@ -34,11 +34,17 @@ musicOff.onclick = function() {
 difficultyButton.addEventListener('change', () => {
     if (difficultyButton.value === 'Easy'){
         boardSize = 4
+        highScoreIndex = 0
     } else if (difficultyButton.value === 'Medium') {
         boardSize = 8
+        highScoreIndex = 1
     } else if (difficultyButton.value === 'Difficult') {
         boardSize = 12
+        highScoreIndex = 2
     }
+
+    highScoreElement.textContent = `High Score: ${highScoreCounter[highScoreIndex]}`
+
 })
 
 let picturesArray = []
