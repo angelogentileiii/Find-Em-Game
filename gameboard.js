@@ -14,13 +14,25 @@ let boardSize = 4
 
 const musicOn = document.getElementById('torture')
 const musicOff = document.getElementById('peace')
+musicOff.checked = true
+
+const catgirlSong = document.createElement('audio')
+catgirlSong.src = 'dance-of-the-catgirls.mp3'
+catgirlSong.loop = true
+catgirlSong.autoplay = true
+
+document.addEventListener('DOMContentLoaded', () => {
+    catgirlSong.play()
+})
 
 musicOn.onclick = function() {
     musicOff.checked = false
+    catgirlSong.play()
 }
 
 musicOff.onclick = function() {
     musicOn.checked = false
+    catgirlSong.pause()
 }
 
 difficultyButton.addEventListener('change', () => {
