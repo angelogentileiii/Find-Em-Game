@@ -5,11 +5,27 @@ const startButtonArea = document.getElementById('time-counter');
 
 // const playAgainButtonElement = document.createElement('button');
 
+// id="diff-dropdown" name="diff-dropdown"
+// onmousedown="this.value='';"
+// onchange="jsFunction(this.value);">
+
+const difficultyButton = document.getElementById('diff-dropdown')
+let boardSize = 4
+
+difficultyButton.addEventListener('change', () => {
+    if (difficultyButton.value === 'Easy'){
+        boardSize = 4
+    } else if (boardSize === 'Medium') {
+        boardSize = 8
+    } else {
+        boardSize = 12
+    }
+})
+
 let picturesArray = []
 
 let targetPicture;
 let body = document.querySelector('body')
-
 
 fetch('http://localhost:3000/results')
 .then(results => results.json())
@@ -17,14 +33,12 @@ fetch('http://localhost:3000/results')
     picturesArray.push(character)
 }))
 
-let boardSize = 5
 let targetRow
 let targetColumn
 
 let correctPictureSource
 let pictureTable = document.createElement('table')
 pictureTable.id = 'gameboard';
-
 
 gameBoardArea.append(pictureTable)
 
