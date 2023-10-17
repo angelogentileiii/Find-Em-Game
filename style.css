@@ -16,6 +16,8 @@ body {
 
 /* header bar area */
 #navigation-bar div label {
+    /* display: block;
+    margin: auto; */
     -webkit-text-stroke-width: .75px; 
     -webkit-text-stroke-color: rgb(250, 134, 227); 
 }
@@ -96,7 +98,7 @@ select {
     display: block;
     margin: auto;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
     padding-bottom: 10px;
 }
 
@@ -112,13 +114,14 @@ select {
 
 #counter-element-label {
     color: rgb(250, 134, 227);
+    font-size: 20px;
 }
 
 #counter-element {
     display:inline-block;
     margin: auto;
     color: rgb(250, 134, 227);
-    background-color: rgb(255, 255, 255);;
+    font-size: 20px;
 }
 
 /* time counter area */
@@ -134,10 +137,6 @@ select {
     margin: auto;
     text-align: center;
     margin-bottom: 25px;
-}
-
-#gameboard {
-
 }
 
 /* game board area */
