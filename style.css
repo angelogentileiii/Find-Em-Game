@@ -15,11 +15,14 @@ body {
 
 
 /* header bar area */
+
+#navigation-bar {
+    padding-left: 13%;
+}
+
 #navigation-bar div label {
-    /* display: block;
-    margin: auto; */
     -webkit-text-stroke-width: .75px; 
-    -webkit-text-stroke-color: rgb(250, 134, 227); 
+    /* -webkit-text-stroke-color: rgb(250, 134, 227);  */
 }
 
 #header-bar {
@@ -27,13 +30,17 @@ body {
     font-family: 'AlexBrushRegular';
     font-weight: normal;
     font-style: normal;
-    font-size: 120px;
-    padding: 25px;
+    font-size: 150px;
+    padding: 10px;
     -webkit-text-stroke-width: 1px; 
     -webkit-text-stroke-color: rgb(250, 134, 227); 
 }
 
 /* navigation bar (search/drop down/new game) */
+
+#navigation-bar{
+    color: rgb(250, 134, 227);
+}
 
 header#navigation-bar div{
     display: inline-block;
@@ -43,6 +50,16 @@ header#navigation-bar div{
     margin-right: auto;
     font-family: 'AlexBrushRegular';
     font-size: 30px;
+}
+
+#musicOnOff {
+    border: none;
+    padding-right: 25px;
+}
+
+#musicOnOff p {
+    display: inline-block;
+    margin: 0%;
 }
 
 #search-bar-form{
@@ -61,10 +78,17 @@ header#navigation-bar div{
     padding-left: 25px;
 }
 
+::placeholder {
+    color: rgb(250, 134, 227);
+}
+
 #submit-button {
     display: inline-block;
     appearance: none;
+    font-family: 'AlexBrushRegular';
+    font-size: 24px;
     outline: 0;
+    color: rgb(250, 134, 227);
     background: rgb(255, 203, 245);
     border: 2.5px solid rgb(254, 228, 249);
 }
@@ -72,13 +96,15 @@ header#navigation-bar div{
 #diff-dropdown {
     display: inline-block;
     text-align: center;
-    padding-right: 100px;
+    padding-right: 25px;
 }
+
 
 select {
     display: inline-block;
     appearance: none;
     outline: 0;
+    color: rgb(250, 134, 227);
     background: rgb(255, 203, 245);
     border: 2.5px solid rgb(254, 228, 249);
 }

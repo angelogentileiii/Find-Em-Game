@@ -34,7 +34,6 @@ function defaultPageLoad() {
     defaultImageOnLoad.src = 'https://media.giphy.com/media/VGjM9wsHH0JMyneWB6/giphy.gif';
     defaultImageOnLoad.id = 'page-load-image';
     defaultLoadArea.appendChild(defaultImageOnLoad);
-
 };
 
 //create startButton
