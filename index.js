@@ -3,7 +3,7 @@ const characterSearchInput = document.getElementById('character-id-input');
 const characterSearchForm = document.getElementById('search-bar-form');
 const characterImageSpanElement = document.getElementById('character-image');
 const counterClock = document.getElementById('counter-element');
-const startGameButtonElement = document.getElementById('start-game-button');
+// const startGameButtonElement = document.getElementById('start-game-button');
 
 const playAgainButtonElement = document.createElement('button');
 
@@ -12,6 +12,7 @@ let allAvailableCharacters;
 let newCharacterImageElement;
 let highScoreCounter = 0;
 let betterLuckNextTimeMessage;
+let startGameButtonElement;
 
 //local json fetch
 fetch('http://localhost:3000/results')
@@ -24,6 +25,24 @@ fetch('http://localhost:3000/results')
 
 function defaultPageLoad() {
 
+}
+
+//create find me/start game button
+function createFindMe(){
+    startGameButtonElement = document.createElement('button');
+    startGameButtonElement.id = 'start-game-button';
+    startGameButtonElement.textContent = `Find Me!`;
+    startButtonArea.appendChild(startGameButtonElement);
+
+    startGameButtonElement.addEventListener('click', () => {
+        counterElementLabel.textContent = `Time Remaining: `
+        currentScoreElement.textContent = `Current Score: ${scoreCounter}`
+    
+        fillGrid();
+        startCounterClock();
+        startGameButtonElement.remove();
+    
+    })
 }
 
 
@@ -47,6 +66,8 @@ characterSearchForm.addEventListener('submit', (event) => {
         } 
         
     })
+
+    createFindMe();
 
     characterSearchForm.reset();
 })
@@ -108,12 +129,12 @@ function gameScoreFunction(){
 
 
 //find me/start game button
-startGameButtonElement.addEventListener('click', () => {
-    counterElementLabel.textContent = `Time Remaining: `
-    currentScoreElement.textContent = `Current Score: ${scoreCounter}`
+// startGameButtonElement.addEventListener('click', () => {
+//     counterElementLabel.textContent = `Time Remaining: `
+//     currentScoreElement.textContent = `Current Score: ${scoreCounter}`
 
-    fillGrid();
-    startCounterClock();
-    startGameButtonElement.remove();
+//     fillGrid();
+//     startCounterClock();
+//     startGameButtonElement.remove();
 
-})
+// })
