@@ -44,7 +44,7 @@ function createStartButton(){
     startGameButtonElement = document.createElement('button');
     startGameButtonElement.id = 'start-game-button';
     startGameButtonElement.textContent = 'Find Me!'
-    startButtonArea.appendChild(startGameButtonElement)
+    characterImageSpanElement.append(startGameButtonElement)
 
     startGameButtonElement.addEventListener('click', () => {
         counterElementLabel.textContent = `Time Remaining: `
@@ -79,12 +79,10 @@ characterSearchForm.addEventListener('submit', (event) => {
             characterImage.src = character.url;
 
         } else if (Number(character.id) === Number(characterSearchInput.value)) {
-            const newLineBreak = document.createElement('br');
             const newCharacterImageElement = document.createElement('img')
             newCharacterImageElement.style
             newCharacterImageElement.id = 'desired-character-image'
             newCharacterImageElement.src = character.url;
-            characterImageSpanElement.appendChild(newLineBreak);
             characterImageSpanElement.appendChild(newCharacterImageElement);
         } 
     })
