@@ -17,8 +17,8 @@ body {
 /* header bar area */
 
 #header-bar {
+    color: rgb(255, 247, 255);
     text-align: center;
-    text-shadow: #d6c0c0;
     font-family: 'AlexBrushRegular';
     font-style: normal;
     font-size: 175px;
@@ -112,7 +112,7 @@ select {
     display: block;
     margin: auto;
     width: 150px;
-    border: 2.5px solid #000000;
+    border: 2.5px solid rgb(255, 247, 255);
 }
 
 /* counter/score tracker */
@@ -198,7 +198,7 @@ select {
 }
 
 .grid-img{
-    border: 2.5px solid #000000;
+    border: 2.5px solid rgb(255, 247, 255);
     height: 125px;
     width: 100px;
 }
@@ -208,7 +208,6 @@ select {
     text-align: center;
     font-family: 'AlexBrushRegular';
     font-size: 40px;
-    font-
     color: rgb(250, 134, 227);
 }
 
