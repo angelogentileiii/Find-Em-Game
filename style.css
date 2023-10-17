@@ -16,17 +16,9 @@ body {
 
 /* header bar area */
 
-#navigation-bar {
-    padding-left: 13%;
-}
-
-#navigation-bar div label {
-    -webkit-text-stroke-width: .75px; 
-    /* -webkit-text-stroke-color: rgb(250, 134, 227);  */
-}
-
 #header-bar {
     text-align: center;
+    text-shadow: #d6c0c0;
     font-family: 'AlexBrushRegular';
     font-weight: normal;
     font-style: normal;
@@ -38,8 +30,14 @@ body {
 
 /* navigation bar (search/drop down/new game) */
 
-#navigation-bar{
+#navigation-bar {
+    padding-left: 13%;
     color: rgb(250, 134, 227);
+}
+
+#navigation-bar div label {
+    -webkit-text-stroke-width: .75px; 
+    /* -webkit-text-stroke-color: rgb(250, 134, 227);  */
 }
 
 header#navigation-bar div{
@@ -182,5 +180,11 @@ select {
     height: 125px;
     width: 100px;
 }
-/* difficulty drop down */
+/* Better Luck Message */
+
+#better-luck-message {
+    text-align: center;
+    font-size: 36px;
+    color: color: rgb(250, 134, 227);
+}
 

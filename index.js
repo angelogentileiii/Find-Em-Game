@@ -133,6 +133,7 @@ function gameScoreFunction(){
         highScoreElement.textContent = `High Score: ${highScoreCounter}`
     } else {
         betterLuckNextTimeMessage = document.createElement('h3');
+        betterLuckNextTimeMessage.id = "better-luck-message";
         const parentDiv = document.getElementById('time-counter').parentNode;
         betterLuckNextTimeMessage.textContent = `Aww, you couldn't find me! Let's play again!`
         parentDiv.insertBefore(betterLuckNextTimeMessage, startButtonArea)
