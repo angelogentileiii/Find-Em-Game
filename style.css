@@ -170,19 +170,17 @@ select {
 }
 
 #play-again {
-    #start-game-button {
-        display: block;
-        margin: auto;
-        text-align: center;
-        margin-bottom: 25px;
-        appearance: none;
-        font-family: 'AlexBrushRegular';
-        font-size: 20px;
-        outline: 0;
-        color: rgb(250, 134, 227);
-        background: rgb(255, 203, 245);
-        border: 2.5px solid rgb(254, 228, 249);
-    }
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 25px;
+    appearance: none;
+    font-family: 'AlexBrushRegular';
+    font-size: 20px;
+    outline: 0;
+    color: rgb(250, 134, 227);
+    background: rgb(255, 203, 245);
+    border: 2.5px solid rgb(254, 228, 249);
 }
 
 /* game board area */
