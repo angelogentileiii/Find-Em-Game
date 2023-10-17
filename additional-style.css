@@ -1,0 +1,23 @@
+body {
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,181,248,1) 68%);
+    font-style: italic;
+}
+
+select {
+    appearance: none;
+    outline: 0;
+    background: rgb(254, 220, 249);
+    border: 2.5px solid rgb(254, 228, 249);
+}
+
+.select {
+    position: relative;
+    display: block;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #e76ed4;
+    overflow: hidden;
+    border-radius: auto;
+}

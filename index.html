@@ -2,23 +2,61 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="./style.css">
+        <!-- <link rel="stylesheet" href="./additional-style.css"> -->
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/alex-brush" type="text/css"/>
         <script defer src="./index.js"></script>
+        <script defer src="./gameboard.js"></script>
     </head>
     <body>
         <header>
-            <select id="diff-dropdown"></select>
-            <button id="new-game-button"></button>
+            <div id="header-bar">
+                Find Me Game
+            </div>
         </header>
-        <form id="search-bar">Search Bar</form>
-        <div id="high-score-tracker">High Score:</div>
-        <div id="current-score-tracker">Current Score:</div>
-        <div id="game-board-area">Game Board
-            <th></th>
-
+        <header id="navigation-bar">
+            <script type="text/javascript">
+                function jsFunction(value)
+                {
+                    console.log(value);
+                }
+            </script>
+            <div>
+                <label for="diff-dropdown">Select Your Difficulty: </label>
+                <select id="diff-dropdown" name="diff-dropdown" onmousedown="this.value='';" onchange="jsFunction(this.value);">
+                    <option>Easy</option>
+                    <option>Medium</option>
+                    <option>Difficult</option>
+                </select>
+            </div>
+            <div>
+                <form id="search-bar-form">
+                    <label for="character-id-input">Search By I D: </label>
+                    <input id="character-id-input" type="text" placeholder="ID between 1 - 20">
+                    <input id="submit-button" type="submit" value="Search">
+                </form>
+            </div>
+        </header>
+        <span id="character-image">
+        </span>
+        <br>
+        <div id="score-tracker-bar">
+            <div id="current-score-tracker">
+                <label for="current-score-tracker"></label>
+                <p id="current-score-tracker"></p>
+            </div>
+            <label for="high-score-tracker"></label>
+            <p id="high-score-tracker"></p>
+        </div>
+        <div id="time-counter">
+            <button id="start-game-button">Find Me!</button>
+            <label id="counter-element-label" for="counter-element"></label>
+            <p id="counter-element"></p>
+        </div>
+        <div id="game-board-area">
         </div>
     </body>
     <footer>
-        <div id="footer">Contact Info/Made by Info?</div>
+        <!-- <div id="footer">Contact Info/Made by Info?</div> -->
     </footer>
 
 </html>
