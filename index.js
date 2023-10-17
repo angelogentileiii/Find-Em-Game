@@ -10,6 +10,8 @@ const playAgainButtonElement = document.createElement('button');
 let desiredCharacter;
 let allAvailableCharacters;
 let newCharacterImageElement;
+let highScoreCounter = 0;
+let betterLuckNextTimeMessage;
 
 //local json fetch
 fetch('http://localhost:3000/results')
@@ -17,7 +19,7 @@ fetch('http://localhost:3000/results')
   .then(results => {
     allAvailableCharacters = results
 
-    console.log(allAvailableCharacters)
+    //console.log(allAvailableCharacters)
 });
 
 function defaultPageLoad() {
@@ -28,7 +30,6 @@ function defaultPageLoad() {
 //character search bar
 characterSearchForm.addEventListener('submit', (event) => {
     event.preventDefault();
-
 
     allAvailableCharacters.map(character => {
         if (Number(character.id) === Number(characterSearchInput.value) && (document.querySelector('span#character-image img'))) {
@@ -46,6 +47,7 @@ characterSearchForm.addEventListener('submit', (event) => {
         } 
         
     })
+
     characterSearchForm.reset();
 })
 
@@ -87,17 +89,31 @@ playAgainButtonElement.addEventListener('click', () => {
     currentScoreElement.textContent = `Current Score: ${scoreCounter}`;
     counterClock.appendChild(startGameButtonElement);
     currentNumber = 3000;
+    betterLuckNextTimeMessage.remove();
 })
 
 
 //updates high schore after game ends
 function gameScoreFunction(){
-    if (Number(scoreCounter > Number(highScoreCounter))) {
-        highScoreElement.textContent = `High Score: ${scoreCounter}`
+    if (Number(scoreCounter >= Number(highScoreCounter))) {
+        highScoreCounter = scoreCounter
+        highScoreElement.textContent = `High Score: ${highScoreCounter}`
     } else {
-        const betterLuckNextTimeMessage = document.createElement('h2');
-        const parentDiv = document.getElementById('time-counter').parentNode
+        betterLuckNextTimeMessage = document.createElement('h3');
+        const parentDiv = document.getElementById('time-counter').parentNode;
         betterLuckNextTimeMessage.textContent = `Aww, you couldn't find me! Let's play again!`
-        parentDiv.insertBefore(betterLuckNextTime, startButtonArea)
+        parentDiv.insertBefore(betterLuckNextTimeMessage, startButtonArea)
     }
 }
+
+
+//find me/start game button
+startGameButtonElement.addEventListener('click', () => {
+    counterElementLabel.textContent = `Time Remaining: `
+    currentScoreElement.textContent = `Current Score: ${scoreCounter}`
+
+    fillGrid();
+    startCounterClock();
+    startGameButtonElement.remove();
+
+})

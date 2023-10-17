@@ -54,7 +54,7 @@ function fillGrid() {
             newPicture.src = picturesArray[randomNumber].url
             
             if (correctPictureSource === newPicture.src) {
-                randomNumber = Math.floor(19 * Math.random()) + randomNumber
+                randomNumber = Math.ceil(19 * Math.random()) + randomNumber
                 if (randomNumber > 19) {
                     randomNumber = randomNumber - 20
                 }
@@ -77,7 +77,6 @@ function fillGrid() {
 }
 
 let scoreCounter = 0
-let highScoreCounter = 0
 
 function handleFound() {
     // console.log('Found It!')
@@ -86,13 +85,3 @@ function handleFound() {
     pictureTable.innerHTML = "";
     fillGrid();
 }
-
-startGameButtonElement.addEventListener('click', () => {
-    counterElementLabel.textContent = `Time Remaining: `
-    currentScoreElement.textContent = `Current Score: ${scoreCounter}`
-
-    fillGrid();
-    startCounterClock();
-    startGameButtonElement.remove();
-
-})
