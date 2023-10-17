@@ -17,7 +17,7 @@ difficultyButton.addEventListener('change', () => {
         boardSize = 4
     } else if (difficultyButton.value === 'Medium') {
         boardSize = 8
-    } else if (difficultyButton.value === 'Hard') {
+    } else if (difficultyButton.value === 'Difficult') {
         boardSize = 12
     }
 })
