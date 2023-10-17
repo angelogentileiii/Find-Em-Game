@@ -1,24 +1,68 @@
+body {
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,181,248,1) 68%);
+    font-style: italic;
+}
+
+
 /* header bar area */
+
 #header-bar {
-    background-color:  rgba(255,181,248,1);
     text-align: center;
-    font-size: 50px;
-    padding: 50px;
+    font-family: 'AlexBrushRegular';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 120px;
+    padding: 25px;
 }
 
 /* navigation bar (search/drop down/new game) */
 
-#navigation-bar {
-    display: contents, inline;
-    margin: auto;
+header#navigation-bar div{
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'AlexBrushRegular';
+    font-size: 30px;
+}
+
+#search-bar-form{
+    display: inline-block;
+    padding-left: 25px;
 }
 
 #character-id-input {
-    display: inline;
+    display: inline-block;
+    appearance: none;
+    outline: 0;
+    background: rgb(255, 203, 245);
+    border: 2.5px solid rgb(254, 228, 249);
+    padding-right: 10px;
+    padding-left: 25px;
+}
+
+#submit-button {
+    display: inline-block;
+    appearance: none;
+    outline: 0;
+    background: rgb(255, 203, 245);
+    border: 2.5px solid rgb(254, 228, 249);
 }
 
 #diff-dropdown {
-    display: inline;
+    display: inline-block;
+    text-align: center;
+    padding-right: 100px;
+}
+
+select {
+    display: inline-block;
+    appearance: none;
+    outline: 0;
+    background: rgb(255, 203, 245);
+    border: 2.5px solid rgb(254, 228, 249);
 }
 
 /* selected character image */
@@ -26,8 +70,8 @@
 #desired-character-image {
     display: block;
     margin: auto;
-    width: 100px;
-    border: 5px solid #000000;
+    width: 150px;
+    border: 2.5px solid #000000;
 }
 
 /* counter/score tracker */
@@ -51,10 +95,13 @@
     margin: auto;
 }
 
+/* time counter area */
 #time-counter {
-    display: inline-block;
-    
+    display: block;
+    margin: auto;
+    text-align: center;
 }
+
 
 /* game board area */
 

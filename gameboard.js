@@ -1,16 +1,15 @@
 const currentScoreElement = document.getElementById('current-score-tracker');
 const highScoreElement = document.getElementById('high-score-tracker');
+const counterElementLabel = document.getElementById('counter-element-label');
+const startButtonArea = document.getElementById('time-counter');
+
+// const playAgainButtonElement = document.createElement('button');
 
 let picturesArray = []
 
 let targetPicture;
 let body = document.querySelector('body')
 
-const newGameButton = document.getElementById('new-game-button')
-
-// body.appendChild(newGameButton)
-
-// newGameButton.textContent = 'New Game'
 
 fetch('http://localhost:3000/results')
 .then(results => results.json())
@@ -22,25 +21,25 @@ let boardSize = 5
 let targetRow
 let targetColumn
 
+let correctPictureSource
 let pictureTable = document.createElement('table')
 pictureTable.id = 'gameboard';
-let correctPictureSource
 
 
 gameBoardArea.append(pictureTable)
 
-targetRow = Math.floor(boardSize * Math.random())
-targetColumn = Math.floor(boardSize * Math.random())
+// targetRow = Math.floor(boardSize * Math.random())
+// targetColumn = Math.floor(boardSize * Math.random())
 
 function fillGrid() {
 
-    targetRow = Math.floor(boardSize * Math.random())
+    targetRow = Math.ceil(4 * Math.random())
     targetColumn = Math.floor(boardSize * Math.random())
 
     pictureTable.innerHTML = ''
     correctPictureSource = document.getElementById('desired-character-image').src
 
-    for (row = 0; row < boardSize; row++) {
+    for (row = 1; row < 5; row++) {
     
         const newRow = document.createElement('tr')
         pictureTable.appendChild(newRow)
@@ -77,20 +76,23 @@ function fillGrid() {
     targetPicture.addEventListener('click', handleFound)
 }
 
-let scoreCounter = 1
+let scoreCounter = 0
+let highScoreCounter = 0
 
 function handleFound() {
-    console.log('Found It!')
-    currentScoreElement.textContent = `Current Score: ${Number(scoreCounter++)}`
+    // console.log('Found It!')
+    currentScoreElement.textContent = `Current Score: ${Number(1 + scoreCounter++)}`
     targetPicture.removeEventListener('click', handleFound);
     pictureTable.innerHTML = "";
     fillGrid();
 }
 
-if (Number(currentScoreElement.textContent > Number(highScoreElement.textContent))) {
-    highScoreElement.textContent = currentScoreElement.textContent
-}
+startGameButtonElement.addEventListener('click', () => {
+    counterElementLabel.textContent = `Time Remaining: `
+    currentScoreElement.textContent = `Current Score: ${scoreCounter}`
 
-newGameButton.addEventListener('click', () => {
-    fillGrid()
+    fillGrid();
+    startCounterClock();
+    startGameButtonElement.remove();
+
 })

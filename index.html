@@ -2,14 +2,15 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="./style.css">
-        <link rel="stylesheet" href="./additional-style.css">
+        <!-- <link rel="stylesheet" href="./additional-style.css"> -->
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/alex-brush" type="text/css"/>
         <script defer src="./index.js"></script>
         <script defer src="./gameboard.js"></script>
     </head>
     <body>
         <header>
             <div id="header-bar">
-                FIND ME GAME
+                Find Me Game
             </div>
         </header>
         <header id="navigation-bar">
@@ -29,30 +30,27 @@
             </div>
             <div>
                 <form id="search-bar-form">
-                    <label for="character-id-input">Search By ID: </label>
-                    <input id="character-id-input" type="text" placeholder="Enter Character ID">
-                    <input type="submit" value="Search">
+                    <label for="character-id-input">Search By I D: </label>
+                    <input id="character-id-input" type="text" placeholder="ID between 1 - 20">
+                    <input id="submit-button" type="submit" value="Search">
                 </form>
-            </div>
-            <div>
-                <button id="new-game-button">New Game</button>
             </div>
         </header>
         <span id="character-image">
         </span>
         <br>
         <div id="score-tracker-bar">
-            <button id="start-game-button">Start</button>
-            <div id="time-counter">
-                <label for="counter-element">Time Remaining: </label>
-                <p id="counter-element">00</p>
-            </div>
             <div id="current-score-tracker">
-                <label for="current-score-tracker">Current Score: </label>
-                <p id="current-score-tracker">00</p>
+                <label for="current-score-tracker"></label>
+                <p id="current-score-tracker"></p>
             </div>
-            <label for="high-score-tracker">High Score: </label>
-            <p id="high-score-tracker">00</p>
+            <label for="high-score-tracker"></label>
+            <p id="high-score-tracker"></p>
+        </div>
+        <div id="time-counter">
+            <button id="start-game-button">Find Me!</button>
+            <label id="counter-element-label" for="counter-element"></label>
+            <p id="counter-element"></p>
         </div>
         <div id="game-board-area">
         </div>
