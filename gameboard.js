@@ -5,11 +5,46 @@ const startButtonArea = document.getElementById('time-counter');
 
 // const playAgainButtonElement = document.createElement('button');
 
+// id="diff-dropdown" name="diff-dropdown"
+// onmousedown="this.value='';"
+// onchange="jsFunction(this.value);">
+
+const difficultyButton = document.getElementById('diff-dropdown')
+let boardSize = 4
+
+const musicOn = document.getElementById('torture')
+const musicOff = document.getElementById('peace')
+musicOff.checked = true
+
+const catgirlSong = document.createElement('audio')
+catgirlSong.src = 'dance-of-the-catgirls.mp3'
+catgirlSong.loop = true
+catgirlSong.autoplay = true
+
+musicOn.onclick = function() {
+    musicOff.checked = false
+    catgirlSong.play()
+}
+
+musicOff.onclick = function() {
+    musicOn.checked = false
+    catgirlSong.pause()
+}
+
+difficultyButton.addEventListener('change', () => {
+    if (difficultyButton.value === 'Easy'){
+        boardSize = 4
+    } else if (difficultyButton.value === 'Medium') {
+        boardSize = 8
+    } else if (difficultyButton.value === 'Difficult') {
+        boardSize = 12
+    }
+})
+
 let picturesArray = []
 
 let targetPicture;
 let body = document.querySelector('body')
-
 
 fetch('http://localhost:3000/results')
 .then(results => results.json())
@@ -17,14 +52,12 @@ fetch('http://localhost:3000/results')
     picturesArray.push(character)
 }))
 
-let boardSize = 5
 let targetRow
 let targetColumn
 
 let correctPictureSource
 let pictureTable = document.createElement('table')
 pictureTable.id = 'gameboard';
-
 
 gameBoardArea.append(pictureTable)
 

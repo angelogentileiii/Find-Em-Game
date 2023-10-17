@@ -21,6 +21,13 @@
                 }
             </script>
             <div>
+                <div id = 'musicOnOff'>
+                    <p>Music: </p>
+                    <input type="radio" id="torture" value = 'ON'>On</input>
+                    <input type="radio" id="peace" value = 'OFF'>Off</input>
+                </div>
+            </div>
+            <div>
                 <label for="diff-dropdown">Select Your Difficulty: </label>
                 <select id="diff-dropdown" name="diff-dropdown" onmousedown="this.value='';" onchange="jsFunction(this.value);">
                     <option>Easy</option>
@@ -30,7 +37,7 @@
             </div>
             <div>
                 <form id="search-bar-form">
-                    <label for="character-id-input">Search By I D: </label>
+                    <label for="character-id-input">Pick Character by I D: </label>
                     <input id="character-id-input" type="text" placeholder="ID between 1 - 20">
                     <input id="submit-button" type="submit" value="Search">
                 </form>
@@ -38,7 +45,7 @@
         </header>
         <span id="character-image">
         </span>
-        <br>
+        <div id="default-load-area"></div>
         <div id="score-tracker-bar">
             <div id="current-score-tracker">
                 <label for="current-score-tracker"></label>
@@ -56,7 +63,9 @@
         </div>
     </body>
     <footer>
-        <!-- <div id="footer">Contact Info/Made by Info?</div> -->
+        <div id="footer">
+            
+        </div>
     </footer>
 
 </html>

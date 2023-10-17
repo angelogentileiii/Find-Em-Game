@@ -3,16 +3,16 @@ const characterSearchInput = document.getElementById('character-id-input');
 const characterSearchForm = document.getElementById('search-bar-form');
 const characterImageSpanElement = document.getElementById('character-image');
 const counterClock = document.getElementById('counter-element');
-// const startGameButtonElement = document.getElementById('start-game-button');
+const startGameButtonElement = document.getElementById('start-game-button');
 
 const playAgainButtonElement = document.createElement('button');
 
+let startGameButtonElement;
 let desiredCharacter;
 let allAvailableCharacters;
 let newCharacterImageElement;
 let highScoreCounter = 0;
 let betterLuckNextTimeMessage;
-let startGameButtonElement;
 
 //local json fetch
 fetch('http://localhost:3000/results')
@@ -20,11 +20,35 @@ fetch('http://localhost:3000/results')
   .then(results => {
     allAvailableCharacters = results
 
-    //console.log(allAvailableCharacters)
+    defaultPageLoad();
 });
 
+//default page image load
 function defaultPageLoad() {
+    defaultImageOnLoad = document.createElement('img');
 
+    randomImage = Math.floor(20 * Math.random())
+
+    defaultImageOnLoad.src = 'https://media.giphy.com/media/VGjM9wsHH0JMyneWB6/giphy.gif';
+    defaultImageOnLoad.id = 'page-load-image';
+    defaultLoadArea.appendChild(defaultImageOnLoad);
+};
+
+//create startButton
+function createStartButton(){
+    startGameButtonElement = document.createElement('button');
+    startGameButtonElement.id = 'start-game-button';
+    startGameButtonElement.textContent = 'Find Me!'
+    startButtonArea.appendChild(startGameButtonElement)
+
+    startGameButtonElement.addEventListener('click', () => {
+        counterElementLabel.textContent = `Time Remaining: `
+        currentScoreElement.textContent = `Current Score: ${scoreCounter}`
+    
+        fillGrid();
+        startCounterClock();
+        startGameButtonElement.remove();
+    })
 }
 
 //create find me/start game button
@@ -67,8 +91,6 @@ characterSearchForm.addEventListener('submit', (event) => {
         
     })
 
-    createFindMe();
-
     characterSearchForm.reset();
 })
 
@@ -94,13 +116,14 @@ function startCounterClock(){
             gameScoreFunction();
 
         }
-    }, 1)
+    }, 5)
  };
 
 
  //play again button - populates after game ends
  function createPlayAgainButton(){
-    playAgainButtonElement.textContent = 'Play Again?'
+    playAgainButtonElement.textContent = 'Play Again?';
+    playAgainButtonElement.id = 'play-again';
     counterClock.appendChild(playAgainButtonElement)
 }
 
@@ -121,6 +144,7 @@ function gameScoreFunction(){
         highScoreElement.textContent = `High Score: ${highScoreCounter}`
     } else {
         betterLuckNextTimeMessage = document.createElement('h3');
+        betterLuckNextTimeMessage.id = "better-luck-message";
         const parentDiv = document.getElementById('time-counter').parentNode;
         betterLuckNextTimeMessage.textContent = `Aww, you couldn't find me! Let's play again!`
         parentDiv.insertBefore(betterLuckNextTimeMessage, startButtonArea)
