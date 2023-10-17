@@ -21,10 +21,6 @@ catgirlSong.src = 'dance-of-the-catgirls.mp3'
 catgirlSong.loop = true
 catgirlSong.autoplay = true
 
-document.addEventListener('DOMContentLoaded', () => {
-    catgirlSong.play()
-})
-
 musicOn.onclick = function() {
     musicOff.checked = false
     catgirlSong.play()
