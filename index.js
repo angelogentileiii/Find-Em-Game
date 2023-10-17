@@ -12,10 +12,12 @@ let desiredCharacter;
 let allAvailableCharacters;
 let newCharacterImageElement;
 let highScoreCounter = [null, null, null];
-let highScoreIndex = 0
+let highScoreIndex = 0;
 let betterLuckNextTimeMessage;
 let randomImage;
 let defaultImageOnLoad;
+
+let inputLimitArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
 const difficultButton = document.getElementById('diff-dropdown')
 
@@ -44,7 +46,7 @@ function createStartButton(){
     startGameButtonElement = document.createElement('button');
     startGameButtonElement.id = 'start-game-button';
     startGameButtonElement.textContent = 'Find Me!'
-    characterImageSpanElement.append(startGameButtonElement)
+    characterImageSpanElement.appendChild(startGameButtonElement)
 
     startGameButtonElement.addEventListener('click', () => {
         counterElementLabel.textContent = `Time Remaining: `
@@ -79,18 +81,34 @@ characterSearchForm.addEventListener('submit', (event) => {
             characterImage.src = character.url;
 
         } else if (Number(character.id) === Number(characterSearchInput.value)) {
-            const newCharacterImageElement = document.createElement('img')
-            newCharacterImageElement.style
+            newCharacterImageElement = document.createElement('img')
             newCharacterImageElement.id = 'desired-character-image'
             newCharacterImageElement.src = character.url;
+
+            newCharacterImageElement.addEventListener('mouseover', (event) => {
+                newCharacterImageElement.style.width = '350px';
+                newCharacterImageElement.style.display = 'block';
+            })
+            
+            newCharacterImageElement.addEventListener('mouseout', (event) => {
+                newCharacterImageElement.style.width = '150px';
+            })
+
             characterImageSpanElement.appendChild(newCharacterImageElement);
-        } 
+
+        } else if (!inputLimitArray.includes(Number(characterSearchInput.value))){
+            newCharacterImageElement.remove();
+            startGameButtonElement.remove();
+        }
     })
 
     defaultImageOnLoad.remove();
 
-    if (!document.getElementById('play-again')) {
-        createStartButton()
+
+    if (inputLimitArray.includes(Number(characterSearchInput.value)) && !document.getElementById('start-game-button') && !document.getElementById('play-again')) {
+        createStartButton();
+    } else if (!inputLimitArray.includes(Number(characterSearchInput.value))) {
+        defaultPageLoad();
     }
 
     characterSearchForm.reset();
@@ -159,15 +177,3 @@ function gameScoreFunction(){
         parentDiv.insertBefore(betterLuckNextTimeMessage, startButtonArea)
     }
 }
-
-
-//find me/start game button
-// startGameButtonElement.addEventListener('click', () => {
-//     counterElementLabel.textContent = `Time Remaining: `
-//     currentScoreElement.textContent = `Current Score: ${scoreCounter}`
-
-//     fillGrid();
-//     startCounterClock();
-//     startGameButtonElement.remove();
-
-// })
