@@ -43,7 +43,9 @@ difficultyButton.addEventListener('change', () => {
         highScoreIndex = 2
     }
 
-    highScoreElement.textContent = `High Score: ${highScoreCounter[highScoreIndex]}`
+    if (highScoreCounter[highScoreIndex] === null) {
+        highScoreElement.textContent = ''
+    }
 
 })
 

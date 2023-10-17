@@ -11,7 +11,7 @@ let startGameButtonElement;
 let desiredCharacter;
 let allAvailableCharacters;
 let newCharacterImageElement;
-let highScoreCounter = [0,0,0];
+let highScoreCounter = [null, null, null];
 let highScoreIndex = 0
 let betterLuckNextTimeMessage;
 let randomImage;
@@ -49,6 +49,18 @@ function createStartButton(){
     startGameButtonElement.addEventListener('click', () => {
         counterElementLabel.textContent = `Time Remaining: `
         currentScoreElement.textContent = `Current Score: ${scoreCounter}`
+        
+        if (difficultButton.value === 'Easy') {
+            highScoreIndex = 0
+        } else if (difficultButton.value === 'Medium') {
+            highScoreIndex = 1
+        } else {
+            highScoreIndex = 2
+        }
+
+        if (highScoreCounter[highScoreIndex] !== null) {
+            highScoreElement.textContent = `High Score: ${highScoreCounter[highScoreIndex]}`
+        }
     
         fillGrid();
         startCounterClock();
@@ -137,6 +149,7 @@ function gameScoreFunction(){
     } else {
         highScoreIndex = 2
     }
+
     if (Number(scoreCounter >= Number(highScoreCounter[highScoreIndex]))) {
         highScoreCounter[highScoreIndex] = scoreCounter
         highScoreElement.textContent = `High Score: ${highScoreCounter[highScoreIndex]}`
