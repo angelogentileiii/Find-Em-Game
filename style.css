@@ -1,0 +1,124 @@
+body {
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,181,248,1) 68%);
+    font-style: italic;
+}
+
+
+/* header bar area */
+
+#header-bar {
+    text-align: center;
+    font-family: 'AlexBrushRegular';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 120px;
+    padding: 25px;
+}
+
+/* navigation bar (search/drop down/new game) */
+
+header#navigation-bar div{
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'AlexBrushRegular';
+    font-size: 30px;
+}
+
+#search-bar-form{
+    display: inline-block;
+    padding-left: 25px;
+}
+
+#character-id-input {
+    display: inline-block;
+    appearance: none;
+    outline: 0;
+    background: rgb(255, 203, 245);
+    border: 2.5px solid rgb(254, 228, 249);
+    padding-right: 10px;
+    padding-left: 25px;
+}
+
+#submit-button {
+    display: inline-block;
+    appearance: none;
+    outline: 0;
+    background: rgb(255, 203, 245);
+    border: 2.5px solid rgb(254, 228, 249);
+}
+
+#diff-dropdown {
+    display: inline-block;
+    text-align: center;
+    padding-right: 100px;
+}
+
+select {
+    display: inline-block;
+    appearance: none;
+    outline: 0;
+    background: rgb(255, 203, 245);
+    border: 2.5px solid rgb(254, 228, 249);
+}
+
+/* selected character image */
+
+#desired-character-image {
+    display: block;
+    margin: auto;
+    width: 150px;
+    border: 2.5px solid #000000;
+}
+
+/* counter/score tracker */
+
+#score-tracker-bar {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+#high-score-tracker {
+    display: inline-block;
+}
+
+#current-score-tracker {
+    display: inline-block;
+}
+
+#counter-element {
+    display:inline-block;
+    margin: auto;
+}
+
+/* time counter area */
+#time-counter {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* game board area */
+
+#game-board-area {
+    display: block;
+    margin: auto;
+}
+
+#gameboard {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-img{
+    border: 2.5px solid #000000;
+    height: 125px;
+    width: 100px;
+}
+/* difficulty drop down */
+
