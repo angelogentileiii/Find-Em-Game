@@ -12,6 +12,17 @@ const startButtonArea = document.getElementById('time-counter');
 const difficultyButton = document.getElementById('diff-dropdown')
 let boardSize = 4
 
+const musicOn = document.getElementById('torture')
+const musicOff = document.getElementById('peace')
+
+musicOn.onclick = function() {
+    musicOff.checked = false
+}
+
+musicOff.onclick = function() {
+    musicOn.checked = false
+}
+
 difficultyButton.addEventListener('change', () => {
     if (difficultyButton.value === 'Easy'){
         boardSize = 4
