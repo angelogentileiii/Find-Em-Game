@@ -2,7 +2,7 @@ body {
     color: rgb(254, 228, 249);
     border: 5px dotted rgb(250, 134, 227);
     background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,181,248,1) 68%);
+    background: radial-gradient(circle, rgb(255, 247, 255) 0%, rgba(255,181,248,1) 80%);
     font-style: italic;
 }
 
@@ -20,9 +20,8 @@ body {
     text-align: center;
     text-shadow: #d6c0c0;
     font-family: 'AlexBrushRegular';
-    font-weight: normal;
     font-style: normal;
-    font-size: 150px;
+    font-size: 175px;
     padding: 10px;
     -webkit-text-stroke-width: 1px; 
     -webkit-text-stroke-color: rgb(250, 134, 227); 
@@ -161,6 +160,29 @@ select {
     margin: auto;
     text-align: center;
     margin-bottom: 25px;
+    appearance: none;
+    font-family: 'AlexBrushRegular';
+    font-size: 20px;
+    outline: 0;
+    color: rgb(250, 134, 227);
+    background: rgb(255, 203, 245);
+    border: 2.5px solid rgb(254, 228, 249);
+}
+
+#play-again {
+    #start-game-button {
+        display: block;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 25px;
+        appearance: none;
+        font-family: 'AlexBrushRegular';
+        font-size: 20px;
+        outline: 0;
+        color: rgb(250, 134, 227);
+        background: rgb(255, 203, 245);
+        border: 2.5px solid rgb(254, 228, 249);
+    }
 }
 
 /* game board area */
@@ -184,7 +206,9 @@ select {
 
 #better-luck-message {
     text-align: center;
-    font-size: 36px;
-    color: color: rgb(250, 134, 227);
+    font-family: 'AlexBrushRegular';
+    font-size: 40px;
+    font-
+    color: rgb(250, 134, 227);
 }
 
