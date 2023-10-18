@@ -97,8 +97,9 @@ header#navigation-bar div{
 #diff-dropdown {
     display: inline-block;
     text-align: center;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
     text-align: center;
     font-family: 'AlexBrushRegular';
     font-size: 18px;
