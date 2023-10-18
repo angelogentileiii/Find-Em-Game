@@ -144,7 +144,7 @@ function startCounterClock(){
 playAgainButtonElement.addEventListener('click', () => {
     playAgainButtonElement.remove();
     scoreCounter = 0
-    currentScoreElement.textContent = `Current Score: ${scoreCounter}`;
+    currentScoreElement.textContent = `Current Score: ${scoreCounter} `;
     counterClock.appendChild(startGameButtonElement);
     currentNumber = 3000;
     betterLuckNextTimeMessage.remove();
