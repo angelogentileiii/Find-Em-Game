@@ -88,15 +88,6 @@ characterSearchForm.addEventListener('submit', (event) => {
             newCharacterImageElement.className = 'zoom';
             newCharacterImageElement.src = character.url;
 
-            // newCharacterImageElement.addEventListener('mouseover', (event) => {
-            //     newCharacterImageElement.style.width = '350px';
-            //     newCharacterImageElement.style.display = 'block';
-            // })
-            
-            // newCharacterImageElement.addEventListener('mouseout', (event) => {
-            //     newCharacterImageElement.style.width = '150px';
-            // })
-
             characterImageSpanElement.appendChild(newCharacterImageElement);
 
         } else if (!inputLimitArray.includes(Number(characterSearchInput.value))){
