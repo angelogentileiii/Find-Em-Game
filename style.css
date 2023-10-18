@@ -4,6 +4,7 @@ body {
     /* background: rgb(255,255,255); */
     background: radial-gradient(circle, rgb(255, 247, 255) 0%, rgba(255,181,248,1) 80%);
     font-style: italic;
+    cursor: url('bubble-cursor.png');
 }
 
 /* page load image */
