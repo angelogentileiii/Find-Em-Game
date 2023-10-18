@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/alex-brush" type="text/css"/>
+        <script defer src="./index.js"></script>
+        <script defer src="./gameboard.js"></script>
+        <script defer src="enter-button.js"></script>
+        <script defer src="high-score-tracker.js"></script>
+    </head>
+    <body>
+        <table id = 'high-score-table'>
+            <tr>
+                <th class="table-label">Difficulty</th>
+                <th class="table-label">High Score</th>
+            </tr>
+            <tr>
+                <td>Easy:</td>
+                <td class = 'table-score' id = 'easy-high-score'>0</td>
+            </tr>
+            <tr>
+                <td>Medium:</td>
+                <td class = 'table-score' id = 'medium-high-score'>0</td>
+            </tr>
+            <tr>
+                <td>Difficult:</td>
+                <td class = 'table-score' id = 'difficult-high-score'>0</td>
+            </tr>
+        </table>
+        <br>
+        <button id = 'go-back'>Return to Main Page</button>
+        
+    </body>
+</html>

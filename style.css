@@ -221,3 +221,19 @@ select {
     color: rgb(250, 134, 227);
 }
 
+#high-score-table {
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'AlexBrushRegular';
+    font-style: normal;
+    font-size: 60px;
+    width: 60%;
+    color: fuchsia;
+    border-collapse: separate;
+    border: 4px solid magenta
+}
+
+.table-score {
+    text-align: center;
+}

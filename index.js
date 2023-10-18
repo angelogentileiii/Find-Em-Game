@@ -4,6 +4,10 @@ const characterSearchForm = document.getElementById('search-bar-form');
 const characterImageSpanElement = document.getElementById('character-image');
 const counterClock = document.getElementById('counter-element');
 const defaultLoadArea = document.getElementById('default-load-area');
+const showHighScoresButton = document.createElement('button')
+showHighScoresButton.addEventListener('click', () => {
+    passHighScores()
+})
 
 const playAgainButtonElement = document.createElement('button');
 
@@ -16,6 +20,10 @@ let highScoreIndex = 0;
 let betterLuckNextTimeMessage;
 let randomImage;
 let defaultImageOnLoad;
+
+highScoreCounter[0] = localStorage.getItem('easyHighScore')
+highScoreCounter[1] = localStorage.getItem('mediumHighScore')
+highScoreCounter[2] = localStorage.getItem('difficultHighScore')
 
 let inputLimitArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
@@ -51,6 +59,8 @@ function createStartButton(){
     startGameButtonElement.addEventListener('click', () => {
         counterElementLabel.textContent = `Time Remaining: `
         currentScoreElement.textContent = `Current Score: ${scoreCounter}`
+
+        
         
         if (difficultButton.value === 'Easy') {
             highScoreIndex = 0
@@ -60,8 +70,16 @@ function createStartButton(){
             highScoreIndex = 2
         }
 
+        for(index = 0; index < 3; index ++) {
+            if (highScoreCounter[highScoreIndex] === 'null') {
+                highScoreCounter[highScoreIndex] = null
+            }
+        }
+
         if (highScoreCounter[highScoreIndex] !== null) {
             highScoreElement.textContent = `High Score: ${highScoreCounter[highScoreIndex]}`
+        } else {
+            highScoreElement.textContent = ''
         }
     
         fillGrid();
@@ -154,6 +172,7 @@ playAgainButtonElement.addEventListener('click', () => {
     counterClock.appendChild(startGameButtonElement);
     currentNumber = 3000;
     betterLuckNextTimeMessage.remove();
+    showHighScoresButton.remove()
 })
 
 //updates high schore after game ends
@@ -176,4 +195,11 @@ function gameScoreFunction(){
         betterLuckNextTimeMessage.textContent = `Aww, you couldn't find me! Let's play again!`
         parentDiv.insertBefore(betterLuckNextTimeMessage, startButtonArea)
     }
+    
+    const navBar = document.getElementById('navigation-bar')
+    navBar.append(showHighScoresButton)
+    showHighScoresButton.textContent = 'Show High Scores'
+    
+
+
 }
