@@ -4,6 +4,7 @@ const characterSearchForm = document.getElementById('search-bar-form');
 const characterImageSpanElement = document.getElementById('character-image');
 const counterClock = document.getElementById('counter-element');
 const defaultLoadArea = document.getElementById('default-load-area');
+const documentBody = document.querySelector('body');
 
 const playAgainButtonElement = document.createElement('button');
 
@@ -27,11 +28,12 @@ fetch('http://localhost:3000/results')
   .then(results => {
     allAvailableCharacters = results
 
-    defaultPageLoad();
+    imageLoad();
 });
 
+
 //default page image load
-function defaultPageLoad() {
+function imageLoad() {
     defaultImageOnLoad = document.createElement('img');
 
     randomImage = Math.floor(20 * Math.random())

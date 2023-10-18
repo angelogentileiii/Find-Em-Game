@@ -1,23 +1,26 @@
 body {
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,181,248,1) 68%);
+    color: rgb(254, 228, 249);
+    background: radial-gradient(circle, rgb(255, 247, 255) 0%, rgba(255,181,248,1) 80%);
     font-style: italic;
+    height: 100%;
+    width: 100%;
 }
 
-select {
+div {
+    display: flex;
+    justify-content: space-evenly;
+    height: 50vh;
+}
+
+#enter-button-element {
+    display: relative;
+    margin-top: auto;
     appearance: none;
+    font-family: 'AlexBrushRegular';
+    font-size: 64px;
     outline: 0;
-    background: rgb(254, 220, 249);
+    color: rgb(250, 134, 227);
+    background: rgb(255, 203, 245);
     border: 2.5px solid rgb(254, 228, 249);
-}
-
-.select {
-    position: relative;
-    display: block;
-    width: 20em;
-    height: 3em;
-    line-height: 3;
-    background: #e76ed4;
-    overflow: hidden;
-    border-radius: auto;
+    border-radius: 25px;
 }
