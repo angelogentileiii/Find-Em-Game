@@ -5,8 +5,10 @@ The 'Find Your NEKO' click game is a web-based application that allows the user 
 
 **Guide for Installation**
 
-Step One: Run your local json-server via your terminal with the ** character.json ** as your database (Instructions to download and run your server can be found here: https://www.npmjs.com/package/json-server).
+Step One: Run your local json-server via your terminal with the **character.json** as your database (Instructions to download and run your server can be found here: https://www.npmjs.com/package/json-server).
+
 Step Two: Start up the main enter page by running 'open enterPage.html' in a new terminal (separate from the terminal running the local json server).
+
 Step Three: Try the functionality, listen to some music and, most of all, enjoy the game!
 
 
