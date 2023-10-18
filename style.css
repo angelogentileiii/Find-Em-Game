@@ -31,6 +31,7 @@ body {
 
 #navigation-bar {
     padding-left: 16%;
+    padding-bottom: 2%;
     color: rgb(250, 134, 227);
 }
 
@@ -124,6 +125,26 @@ select {
     border: 2.5px solid rgb(255, 247, 255);
 }
 
+.zoom {
+    padding: 10px;
+    background: rgb(255, 247, 255);
+    transition: transform .2s;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+  
+.zoom:hover {
+    transform: scale(2.0);
+    background: brightness(70%);
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+
 /* counter/score tracker */
 
 #score-tracker-bar {
@@ -168,7 +189,7 @@ select {
     display: block;
     margin: auto;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
     appearance: none;
     font-family: 'AlexBrushRegular';

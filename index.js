@@ -84,17 +84,18 @@ characterSearchForm.addEventListener('submit', (event) => {
 
         } else if (Number(character.id) === Number(characterSearchInput.value)) {
             newCharacterImageElement = document.createElement('img')
-            newCharacterImageElement.id = 'desired-character-image'
+            newCharacterImageElement.id = 'desired-character-image';
+            newCharacterImageElement.className = 'zoom';
             newCharacterImageElement.src = character.url;
 
-            newCharacterImageElement.addEventListener('mouseover', (event) => {
-                newCharacterImageElement.style.width = '350px';
-                newCharacterImageElement.style.display = 'block';
-            })
+            // newCharacterImageElement.addEventListener('mouseover', (event) => {
+            //     newCharacterImageElement.style.width = '350px';
+            //     newCharacterImageElement.style.display = 'block';
+            // })
             
-            newCharacterImageElement.addEventListener('mouseout', (event) => {
-                newCharacterImageElement.style.width = '150px';
-            })
+            // newCharacterImageElement.addEventListener('mouseout', (event) => {
+            //     newCharacterImageElement.style.width = '150px';
+            // })
 
             characterImageSpanElement.appendChild(newCharacterImageElement);
 
