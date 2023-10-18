@@ -4,7 +4,7 @@ body {
     font-style: italic;
     height: 100%;
     width: 100%;
-    cursor: url('cursor.png'), auto;
+    cursor: url('bubble-cursor.png'), auto;
 }
 
 div {
