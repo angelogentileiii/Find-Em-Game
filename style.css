@@ -135,7 +135,7 @@ select {
 }
   
 .zoom:hover {
-    transform: scale(2.0);
+    transform: scale(1.75);
     background: brightness(70%);
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
