@@ -17,7 +17,7 @@ const musicOff = document.getElementById('peace')
 musicOff.checked = true
 
 const catgirlSong = document.createElement('audio')
-catgirlSong.src = 'dance-of-the-catgirls.mp3'
+catgirlSong.src = 'dance-of-the-catgirls-edit.mp3'
 catgirlSong.loop = true
 catgirlSong.autoplay = true
 
