@@ -1,5 +1,4 @@
 body {
-    cursor: url('bubble-cursor.png'), auto;
     color: rgb(254, 228, 249);
     border: 5px dotted rgb(250, 134, 227);
     background: radial-gradient(circle, rgb(255, 247, 255) 0%, rgba(255,181,248,1) 80%);
@@ -19,6 +18,7 @@ body {
 #header-bar {
     color: rgb(255, 247, 255);
     text-align: center;
+    text-shadow: rgb(255, 65, 217) 1px 0 10px;
     font-family: 'AlexBrushRegular';
     font-style: normal;
     font-size: 175px;
@@ -99,7 +99,6 @@ header#navigation-bar div{
     text-align: center;
     padding: 2px;
     padding-left: 5px;
-    padding-right: 5px;
     text-align: center;
     font-family: 'AlexBrushRegular';
     font-size: 18px;
@@ -242,6 +241,6 @@ select {
     text-align: center;
     font-family: 'AlexBrushRegular';
     font-size: 45px;
-    color: rgb(250, 134, 227);
+    color: rgb(255, 247, 255);
+    text-shadow: rgb(255, 65, 217) 1px 0 10px;
 }
-
