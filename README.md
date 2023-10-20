@@ -1,4 +1,4 @@
-**'FIND YOUR NEKO" Click Game**
+## 'FIND YOUR NEKO" Click Game
 
 The 'Find Your NEKO' click game is a web-based application that allows the user to play a picture matching game based on the character of their choosing from our local database. The local database has been populated through data retrieved from the nekos.best API (https://www.npmjs.com/package/json-server).
 
